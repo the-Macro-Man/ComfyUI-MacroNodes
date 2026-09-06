@@ -1,0 +1,31 @@
+name: Publish to Comfy registry
+
+# The version number in pyproject.toml is the release trigger: bump it, push to
+# main, and this publishes. That is Comfy's documented pattern, and it is safer
+# than tagging - a tag and a pyproject bump can drift apart, and publishing the
+# wrong version number is not something the Registry lets you undo.
+#
+# workflow_dispatch is here so a failed run can be retried from the Actions tab
+# without inventing a new version.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "pyproject.toml"
+
+jobs:
+  publish-node:
+    name: Publish Custom Node to registry
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+
+      - name: Publish Custom Node
+        uses: Comfy-Org/publish-node-action@main
+        with:
+          # Set this in Settings -> Secrets and variables -> Actions ->
+          # New repository secret, named exactly REGISTRY_ACCESS_TOKEN.
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}

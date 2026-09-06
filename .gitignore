@@ -1,0 +1,16 @@
+# Written for me, not for the repo: contains local Windows paths and
+# API-key instructions. Kept on disk, never committed.
+SETUP_STEPS.md
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

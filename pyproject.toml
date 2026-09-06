@@ -1,0 +1,30 @@
+[project]
+name = "macronodes"
+version = "1.0.0"
+description = "Quality-of-life nodes for ComfyUI. Currently: Model Name Extractor, which names your saved files and folders after the model that made them."
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/the-Macro-Man/ComfyUI-MacroNodes"
+"Bug Tracker" = "https://github.com/the-Macro-Man/ComfyUI-MacroNodes/issues"
+
+[tool.comfy]
+PublisherId = "the-macroman"
+DisplayName = "Macro Nodes"
+
+# Icon is deliberately omitted for now.
+#
+# The Registry's YARA scanner flags raw.githubusercontent.com under the
+# `contains_blacklisted_url` rule (T1102), and an Icon URL has to point at a
+# hosted image - the repo being the obvious place. On comfyui-amdmonitor that
+# detection contributed to 11 versions being banned.
+#
+# This package has no network code of any kind, so leaving the Icon out means
+# the first release contains zero URLs the scanner objects to. If 1.0.0 comes
+# back Active, that isolates the variable and the Icon can be added in 1.0.1:
+#
+# Icon = "https://raw.githubusercontent.com/the-Macro-Man/ComfyUI-MacroNodes/main/icon.png"
