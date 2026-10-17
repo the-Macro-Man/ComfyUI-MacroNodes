@@ -12,7 +12,7 @@ https://github.com/the-Macro-Man/ComfyUI-MacroNodes
 
 from .nodes import MODULES
 
-__version__ = "1.0.0"
+__version__ = "1.2.0"
 
 NODE_CLASS_MAPPINGS = {}
 NODE_DISPLAY_NAME_MAPPINGS = {}

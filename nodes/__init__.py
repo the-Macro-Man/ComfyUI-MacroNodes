@@ -13,9 +13,15 @@ to mistake for dynamic code loading.
 """
 
 from . import model_name_extractor
+from . import save_image_macro
+from . import prompt_prefix
+from . import concat_text
 
 MODULES = [
     model_name_extractor,
+    save_image_macro,
+    prompt_prefix,
+    concat_text,
 ]
 
 __all__ = ["MODULES"]
